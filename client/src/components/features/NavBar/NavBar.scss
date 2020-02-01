@@ -1,0 +1,52 @@
+@import '../../../styles/settings.scss';
+
+.navbar {
+    display: flex;
+    align-items: center;
+    border-bottom: $std-border-width solid $std-input-placeholder-gray;
+    padding: 2*$std-margin-and-padding;
+    margin-bottom: 6*$std-margin-and-padding;
+
+    &__button, &__input {
+        color: white;
+        font-family: $std-font-family;
+        font-size: $std-font-size;
+    }
+    
+    &__button {
+        background-color: $blue;
+        border: 0px;
+        border-radius: $std-border-radius;
+        white-space: nowrap;
+        margin-left: $std-margin-and-padding;
+        display: flex;
+        width: $std-button-height-and-width;
+        height: $std-button-height-and-width;
+    }
+    
+    &__input {
+        width: 100%;
+        background-color: $gray;
+        border: none;
+
+        &:focus {
+            outline: none;
+            color: $yellow;
+        }
+
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $std-input-placeholder-gray;
+            opacity: 1; /* Firefox */
+        }
+          
+        &::-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $std-input-placeholder-gray;
+        }
+          
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color: $std-input-placeholder-gray;
+        }
+
+    }
+
+}

@@ -1,0 +1,12 @@
+@import '../../../styles/settings.scss';
+
+.checkmark {
+    color: $gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $std-font-size;
+    width: $std-chcekbox-height-and-width;
+    height: $std-chcekbox-height-and-width;
+    position: absolute;
+}

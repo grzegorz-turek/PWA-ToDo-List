@@ -1,0 +1,69 @@
+@import '../../../styles/settings.scss';
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 2*$std-margin-and-padding;
+    position: relative;
+
+    &:not(:last-of-type) {
+        border-bottom: $std-border-width solid $white;
+    }
+
+    &__checkbox {
+        background-color: $white;
+        border-radius: $std-border-radius;
+        position: relative;
+
+        &__cover {
+            border-radius: $std-border-radius;
+            width: $std-chcekbox-height-and-width;
+            height: $std-chcekbox-height-and-width;
+            position: absolute;
+            z-index: 9999;
+        }
+
+        &__blank {
+            border-radius: $std-border-radius;
+            width: $std-chcekbox-height-and-width;
+            height: $std-chcekbox-height-and-width;
+        }
+    
+    }
+
+    .done {
+        color: $std-input-placeholder-gray;
+    }
+
+    &__input {
+        color: $white;
+        font-family: $std-font-family;
+        font-size: $std-font-size;
+        width: 100%;
+        background-color: $gray;
+        border: none;
+        margin-left: 2*$std-margin-and-padding;
+
+        &:focus {
+            outline: none;
+            color: $yellow;
+        }
+    
+    }
+
+    &__button {
+        background-color: $blue;
+        border: 0px;
+        border-radius: $std-border-radius;
+        margin-left: 2*$std-margin-and-padding;
+        display: flex;
+        width: $std-button-height-and-width;
+        height: $std-button-height-and-width;
+        color: $white;
+        font-family: $std-font-family;
+        font-size: $std-font-size;
+        position: relative;
+
+    }
+
+}
