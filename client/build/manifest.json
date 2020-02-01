@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://pwa-todolist.herokuapp.com/",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#3e484a",
   "background_color": "#3e484a"
