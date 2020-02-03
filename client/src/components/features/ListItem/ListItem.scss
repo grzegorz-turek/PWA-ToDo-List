@@ -57,6 +57,8 @@
         border-radius: $std-border-radius;
         margin-left: 2*$std-margin-and-padding;
         display: flex;
+        align-items: center;
+        justify-content: center;
         width: $std-button-height-and-width;
         height: $std-button-height-and-width;
         color: $white;

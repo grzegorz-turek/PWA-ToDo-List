@@ -20,6 +20,8 @@
         white-space: nowrap;
         margin-left: $std-margin-and-padding;
         display: flex;
+        align-items: center;
+        justify-content: center;
         width: $std-button-height-and-width;
         height: $std-button-height-and-width;
     }
