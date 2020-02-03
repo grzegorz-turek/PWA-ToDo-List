@@ -1,11 +1,11 @@
 const express = require('express');
+const compression = require('compression');
 const helmet = require('helmet');
 const cors = require('cors');
 const config = require('./config');
-const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
-//const loadDataToDb = require('./data');
+const app = express();
 
 /* importing routes */
 const listRoutes = require('./routes/list.routes');
@@ -17,6 +17,9 @@ app.use(cors());
 /* middleware - former body-parser:  przy odebraniu zapytania typu POST, będziemy mieć dostęp do danych w obiekcie req.body */
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+/* compression */
+app.use(compression());
 
 /* api */
 app.use('/api', listRoutes);
