@@ -34,9 +34,18 @@ class ListItem extends React.Component {
         this.props.loadListInComponent();
     }
 
+    keyPressed = (event) => {
+        if (event.key === "Enter") {
+            if (this.state.updatedItm.content !== this.props.listitem.content) {
+                this.handleSubmitChangedItemIntoList();
+            }
+        }
+    }
+
     render() {
         return (
-            <form className='list-item'>
+            <div className='list-item'>
+            {/*</form><form className='list-item'>*/}
                 <div className='list-item__checkbox'>
                     <div className='list-item__checkbox__blank'></div>
                 </div>
@@ -48,10 +57,12 @@ class ListItem extends React.Component {
                     value={this.state.updatedItm.content || this.props.listitem.content}
                     onChange={this.handleChangeItemFromList}
                     onBlur={this.state.updatedItm.content !== this.props.listitem.content ? this.handleSubmitChangedItemIntoList : null}
+                    onKeyPress={this.keyPressed}
                 />
-                <button className='list-item__button' aria-label='Approve' onClick={this.state.updatedItm.content !== this.props.listitem.content ? this.handleSubmitChangedItemIntoList : null}><MdCheck /></button>
+                {/*<button className='list-item__button' aria-label='Approve' onClick={this.state.updatedItm.content !== this.props.listitem.content ? this.handleSubmitChangedItemIntoList : null}><MdCheck /></button>*/}
                 <button className='list-item__button' aria-label='Remove' onClick={this.handleRemoveItemFromList}><MdClose /></button>
-            </form>
+            {/*</form>*/}
+            </div>
         )
     }
 }

@@ -16,7 +16,7 @@ class NavBar extends React.Component {
     }
 
     handleAddItem = async (event) => {
-        event.preventDefault();
+        //event.preventDefault();
         await this.props.addItemToList(this.state.newItm);
         this.props.loadListInComponent();
         this.resetAddItem();
@@ -31,13 +31,21 @@ class NavBar extends React.Component {
         })
     }
 
+    keyPressed = (event) => {
+        if (event.key === "Enter") {
+            if (this.state.newItm.content) {
+                this.handleAddItem();
+            }
+        }
+    }
+
     render() {
 
         return (
-            <form className='navbar' onSubmit={this.state.newItm.content ? this.handleAddItem : null}>
-                <input type='text' placeholder='add task here ...' className='navbar__input' name='content' value={this.state.newItm.content} onChange={this.handleChange} />
-                <button className='navbar__button' aria-label='Approve'><MdCheck /></button>
-            </form>
+            <div className='navbar' /*onSubmit={this.state.newItm.content ? this.handleAddItem : null}*/>
+                <input type='text' placeholder='add task here ...' className='navbar__input' name='content' value={this.state.newItm.content} onChange={this.handleChange} onKeyPress={this.keyPressed} />
+                {/*<button className='navbar__button' aria-label='Approve'><MdCheck /></button>*/}
+            </div>
         )
     }
 }
