@@ -59,13 +59,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: $std-button-height-and-width;
-        height: $std-button-height-and-width;
         color: $white;
         font-family: $std-font-family;
         font-size: $std-font-size;
         position: relative;
-
+        padding: $button-margin-and-padding;
     }
 
 }
